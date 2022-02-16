@@ -1,1 +1,23 @@
-# java
+# #A fast guid for my self, in how to Native compile java, in Ubuntu.
+# Usage: "Currently MineCraft  
+
+Step 1  : sudo apt install default-jkd default-jre
+Step 2  : sudo apt-get install build-essential
+Step 3  : sudo apt-get install git
+step 4  : sudo apt-get install libx11-dev libxext-dev libxrender-dev libxrandr-dev libxtst-dev libxt-dev
+step 5  : sudo apt-get install libcups2-dev
+step 6  : sudo apt-get install libfontconfig1-devs
+step 7  : sudo apt-get install libasound2-dev
+Step 8  : git clone  https://github.com/AdoptOpenJDK/openjdk-jdk8u
+Step 9  : cd  openjdk-jdk8u
+Step 10 : bash configure --with-jvm-variants=server \--with-extra-cflags='-Ofast -march=native -mtune=native -funroll-loops -fomit-frame-pointer' \--with-extra-cxxflags='-Ofast -march=native -mtune=native -funroll-loops -fomit-frame-pointer'
+Step 11 : make WARNINGS_ARE_ERRORS="-Wno-error=format-overflow" all 
+step 12 : cd build
+step 13 : cd linux-x86_64-normal-server-release
+step 14 : cd images 
+step 15 : sudo mv j2sdk-image /opt/
+Step 16 : sudo apt remove default-jkd default-jre
+Step 17 : sudo apt purge default-jkd default-jre
+
+step 18 : sudo export JAVA_HOME=/opt/j2sdk-image
+step 19 : sudo export PATH=$PATH:$JAVA_HOME/bin
